@@ -24,7 +24,7 @@ Sangha Nam `nam.sangha@kaist.ac.kr`
 ## Publisher
 [Machine Reading Lab](http://mrlab.kaist.ac.kr/) @ KAIST
 
-## Citaion
+## Citation
 @article{nam2018distant,
   title={Distant Supervision for Relation Extraction with Multi-sense Word Embedding},
   author={Nam, Sangha and Han, Kijong and Kim, Eun-kyung and Choi, Key-Sun},
