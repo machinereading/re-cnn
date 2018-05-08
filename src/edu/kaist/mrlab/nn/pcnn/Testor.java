@@ -1,6 +1,9 @@
 package edu.kaist.mrlab.nn.pcnn;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Map;
 
 import org.deeplearning4j.eval.Evaluation;
@@ -90,8 +93,27 @@ public class Testor {
 			ComputationGraphEvaluator evaluator = new ComputationGraphEvaluator(net);
 			evaluator.evaluate(testIter);
 
+			fileCopy("data/test/pl4-out-orig", "data/test/pl4-out");
 		}
 
+	}
+
+	public static void fileCopy(String inFileName, String outFileName) {
+		try {
+			FileInputStream fis = new FileInputStream(inFileName);
+			FileOutputStream fos = new FileOutputStream(outFileName);
+
+			int data = 0;
+			while ((data = fis.read()) != -1) {
+				fos.write(data);
+			}
+			fis.close();
+			fos.close();
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public static void main(String[] ar) throws Exception {

@@ -1,6 +1,7 @@
 package edu.kaist.mrlab.nn.pcnn.pipeline;
 
 import edu.kaist.mrlab.nn.pcnn.Testor;
+import edu.kaist.mrlab.nn.pcnn.postpro.CSVWriter;
 import edu.kaist.mrlab.nn.pcnn.prepro.SentencePreprocessorWithTokenizer;
 import edu.kaist.mrlab.nn.pcnn.prepro.TrainTestSetSeperator;
 import edu.kaist.mrlab.nn.pcnn.utilities.CSVFormatter;
@@ -39,6 +40,11 @@ public class Extraction {
 		Testor t = new Testor();
 		t.init();
 		t.run(isLive, testInputFilePath, testFolder);
+		
+		if(isSemeval) {
+			CSVWriter csvw = new CSVWriter();
+			csvw.run();
+		}
 
 	}
 }

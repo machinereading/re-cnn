@@ -64,9 +64,12 @@ public class DomainRangeChecker {
 		}
 	}
 
-	public void filter() throws Exception {
+	public String filter() throws Exception {
+		
+		String result = "data/test/pl4-out";
+		
 		BufferedReader br = Files.newBufferedReader(Paths.get("data/test/pl4-out-orig"));
-		BufferedWriter bw = Files.newBufferedWriter(Paths.get("data/test/pl4-out"));
+		BufferedWriter bw = Files.newBufferedWriter(Paths.get(result));
 		// BufferedWriter bw = Files
 		// .newBufferedWriter(Paths.get("/test/wjd1004109/PL-Web-Demo/DB2XB/data/pl_out/pl4-out"));
 
@@ -148,6 +151,8 @@ public class DomainRangeChecker {
 		}
 		br.close();
 		bw.close();
+		
+		return result;
 	}
 
 	public static void main(String[] ar) throws Exception {
