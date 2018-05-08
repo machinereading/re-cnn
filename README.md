@@ -11,6 +11,8 @@ CNN-based Relation Extraction Model
 
 ## How to use
 refer `edu.kaist.mrlab.nn.pcnn.pipeline` package
+  * `Learning.java`
+  * `Extraction.java`
 
 ### How to run
 `mvn clean compile exec:java`
