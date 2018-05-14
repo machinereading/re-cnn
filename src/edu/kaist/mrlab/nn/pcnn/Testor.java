@@ -42,7 +42,7 @@ public class Testor {
 	public static DomainRangeChecker drc;
 	public static Map<String, Integer> labelClassMap;
 
-	public static SentenceStore originalSentenceStore;
+	public static SentenceStore originalSentenceStore = new SentenceStore();
 
 	public void init() throws Exception {
 
@@ -69,7 +69,6 @@ public class Testor {
 
 	public void run(boolean isLive, String extract, String root) throws Exception {
 
-		originalSentenceStore = new SentenceStore();
 		sentenceStore = new SentenceStore();
 		positionStore = new PositionStore();
 

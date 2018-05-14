@@ -8,18 +8,17 @@ import edu.kaist.mrlab.nn.pcnn.utilities.CSVFormatter;
 
 public class Learning {
 	public static void learn() throws Exception {
-		
+
 		boolean isSemeval = Configuration.isSemeval;
 
-		// String root = Configuration.root;
 		String semevalFile = Configuration.semevalFile;
 		String dsInputFilePath = Configuration.dsInputFilePath;
 		final String twitterParsedFolder = Configuration.twitterParsedFolder;
 		final String trainDevFolder = Configuration.trainDevFolder;
 		double devRatio = Configuration.devRatio;
-		
+
 		// Semeval to Ours
-		if(isSemeval) {
+		if (isSemeval) {
 			CSVFormatter csvf = new CSVFormatter();
 			csvf.run(semevalFile, dsInputFilePath);
 		}
@@ -30,7 +29,7 @@ public class Learning {
 
 		TrainTestSetSeperator ttss = new TrainTestSetSeperator(devRatio);
 		ttss.run(twitterParsedFolder, trainDevFolder);
-		
+
 		// Learning
 		Learner learner = new Learner();
 		learner.run(trainDevFolder);

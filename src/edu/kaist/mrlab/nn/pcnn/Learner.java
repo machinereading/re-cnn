@@ -49,7 +49,8 @@ public class Learner {
 	// public static final String WORD_VECTORS_PATH =
 	// "data/embedding/ko_vec_100dim_1min_word_stem";
 
-	public void run(String root) throws Exception {
+	public void run(String trainDevFolder) throws Exception {
+		
 		DataSetIteratorProvider dsip = new DataSetIteratorProvider();
 
 		// Basic configuration
@@ -117,9 +118,9 @@ public class Learner {
 		WordVectors wordVectors = WordVectorSerializer.readWord2VecModel(WORD_VECTORS_PATH);
 
 		DataSetIterator trainIter = dsip.getDataSetIterator(true, wordVectors, positionVectors, POSVectors, batchSize,
-				truncateReviewsToLength, rng, t, root);
+				truncateReviewsToLength, rng, t, trainDevFolder);
 		DataSetIterator testIter = dsip.getDataSetIterator(false, wordVectors, positionVectors, POSVectors, batchSize,
-				truncateReviewsToLength, rng, t, root);
+				truncateReviewsToLength, rng, t, trainDevFolder);
 		long end = System.currentTimeMillis();
 
 		System.out.println(

@@ -25,7 +25,7 @@ public class DataSetIteratorProvider {
 
 	public DataSetIterator getDataSetIterator(boolean isTraining, WordVectors wordVectors,
 			PositionVectors positionVectors, POSVectors POSVectors, int minibatchSize, int maxSentenceLength, Random rng,
-			TokenizerFactory tokenizerFactory, String root) throws Exception {
+			TokenizerFactory tokenizerFactory, String trainDevFolder) throws Exception {
 
 		List<String> sentences = new ArrayList<String>();
 		List<String> labels = new ArrayList<String>();
@@ -42,9 +42,9 @@ public class DataSetIteratorProvider {
 			Path path = null;
 
 			if (isTraining) {
-				path = Paths.get(root, property + "_train");
+				path = Paths.get(trainDevFolder, property + "_train");
 			} else {
-				path = Paths.get(root, property + "_test");
+				path = Paths.get(trainDevFolder, property + "_test");
 			}
 
 			BufferedReader br = Files.newBufferedReader(path);
