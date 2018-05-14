@@ -1,22 +1,22 @@
 package edu.kaist.mrlab.nn.pcnn.pipeline;
 
+import edu.kaist.mrlab.nn.pcnn.Configuration;
 import edu.kaist.mrlab.nn.pcnn.Learner;
 import edu.kaist.mrlab.nn.pcnn.prepro.SentencePreprocessorWithTokenizer;
 import edu.kaist.mrlab.nn.pcnn.prepro.TrainTestSetSeperator;
 import edu.kaist.mrlab.nn.pcnn.utilities.CSVFormatter;
-import edu.kaist.mrlab.nn.pcnn.utilities.GlobalVariables;
 
 public class Learning {
-	public static void main(String[] ar) throws Exception {
+	public static void learn() throws Exception {
 		
-		boolean isSemeval = false;
+		boolean isSemeval = Configuration.isSemeval;
 
-		String root = "data/ds/iter/";
-		String semevalFile = root + "semeval-sample";
-		String dsInputFilePath = root + "ds-sample";
-		final String twitterParsedFolder = root + "total_" + GlobalVariables.option + "/";
-		final String trainDevFolder = root + "train_test_" + GlobalVariables.option + "/";
-		double devRatio = 0.1;
+		// String root = Configuration.root;
+		String semevalFile = Configuration.semevalFile;
+		String dsInputFilePath = Configuration.dsInputFilePath;
+		final String twitterParsedFolder = Configuration.twitterParsedFolder;
+		final String trainDevFolder = Configuration.trainDevFolder;
+		double devRatio = Configuration.devRatio;
 		
 		// Semeval to Ours
 		if(isSemeval) {

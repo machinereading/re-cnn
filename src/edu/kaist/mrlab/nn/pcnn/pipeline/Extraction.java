@@ -1,25 +1,23 @@
 package edu.kaist.mrlab.nn.pcnn.pipeline;
 
+import edu.kaist.mrlab.nn.pcnn.Configuration;
 import edu.kaist.mrlab.nn.pcnn.Testor;
 import edu.kaist.mrlab.nn.pcnn.postpro.CSVWriter;
 import edu.kaist.mrlab.nn.pcnn.prepro.SentencePreprocessorWithTokenizer;
 import edu.kaist.mrlab.nn.pcnn.prepro.TrainTestSetSeperator;
 import edu.kaist.mrlab.nn.pcnn.utilities.CSVFormatter;
-import edu.kaist.mrlab.nn.pcnn.utilities.GlobalVariables;
 
 public class Extraction {
-	public static void main(String[] ar) throws Exception {
+	public static void test() throws Exception {
 
-		boolean isSemeval = false;
+		boolean isSemeval = Configuration.isSemeval;
 
-		String root = "data/ds/iter/";
-		String semevalTestFile = root + "semeval-test";
-//		String testInputFilePath = root + "gs-sample";
-		String testInputFilePath = "data/test/ko_test.txt"; // if live, sample file
-		final String twitterParsedFolder = root + "total_" + GlobalVariables.option + "/";
-		final String testFolder = root + "train_test_" + GlobalVariables.option + "/";
-		double testRatio = 1.0;
-		boolean isLive = true;
+		String semevalTestFile = Configuration.semevalTestFile;
+		String testInputFilePath = Configuration.testInputFilePath;
+		final String twitterParsedFolder = Configuration.twitterParsedFolder;
+		final String testFolder = Configuration.testFolder;
+		double testRatio = Configuration.testRatio;
+		boolean isLive = Configuration.isLive;
 
 		// Semeval to Ours
 		if (isSemeval) {
