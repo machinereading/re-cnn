@@ -10,13 +10,12 @@ CNN-based Relation Extraction Model
 * Korean word embedding file [download here](https://drive.google.com/file/d/1UwCp0xwfgl9185B_iJ2ZY3W7vSEsqLu0/view?usp=sharing)
 
 ## How to use
-refer `edu.kaist.mrlab.nn.pcnn.pipeline` package
-
-  * `Learning.java`
-  * `Extraction.java`
+refer `edu.kaist.mrlab.nn.pcnn.Main.java` and `PCNN.conf` files
 
 ### How to run
-`mvn clean compile exec:java`
+`mvn exec:java -Dexec.args="--training"`
+<br>or<br>
+`mvn exec:java -Dexec.args="--testing"`
 
 ## Licenses
 * `CC BY-NC-SA` [Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/2.0/)
