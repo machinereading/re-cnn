@@ -20,7 +20,7 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>edu.kaist.mrlab.nlp.word2vec.Word2VecLearner</mainClass>
+					<mainClass>edu.kaist.mrlab.nn.pcnn.Main</mainClass>
 					<cleanupDaemonThreads>false</cleanupDaemonThreads>
 				</configuration>
 			</plugin>
