@@ -17,6 +17,16 @@ refer `edu.kaist.mrlab.nn.pcnn.Main.java` and `PCNN.conf` files
 <br>or<br>
 `mvn exec:java -Dexec.args="--testing"`
 
+### Data Example
+``` 
+라타쿵가	에콰도르	country	코토팍시 국제공항(, )은  << _obj_ >>   << 코토팍시_주 >>   << _sbj_ >> 에 있는  << 국제공항 >> 이다.
+코토팍시_주	에콰도르	country	코토팍시 국제공항(, )은  << _obj_ >>   << _sbj_ >>   << 라타쿵가 >> 에 있는  << 국제공항 >> 이다. 
+```
+TSV format; subject, object, relation, sentence with two position of target entities;
+<br>
+<< >>: entity boundary
+_sbj_, _obj_: special token for subject and object entities
+
 ## Licenses
 * `CC BY-NC-SA` [Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/2.0/)
 * If you want to commercialize this resource, [please contact to us](http://mrlab.kaist.ac.kr/contact)
