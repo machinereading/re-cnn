@@ -24,8 +24,9 @@ refer `edu.kaist.mrlab.nn.pcnn.Main.java` and `PCNN.conf` files
 ```
 TSV format; subject, object, relation, sentence with two position of target entities;
 <br>
-<< >>: entity boundary
-_sbj_, _obj_: special token for subject and object entities
+``<< >>``: entity boundary
+<br>
+``_sbj_, _obj_``: special token for subject and object entities
 
 ## Licenses
 * `CC BY-NC-SA` [Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/2.0/)
